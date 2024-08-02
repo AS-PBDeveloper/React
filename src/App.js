@@ -1,15 +1,17 @@
 // import logo from './logo.svg';
 import './App.css';
 import Header from "./MyComponents/Header";
-import { Todos } from "./MyComponents/Todos";
-import { AddTodo } from "./MyComponents/AddTodo";
-import { About } from "./MyComponents/About";
-import { Footer } from "./MyComponents/Footer";
+import  Todos  from "./MyComponents/Todos";
+import  AddTodo  from "./MyComponents/AddTodo";
+import  About  from "./MyComponents/About";
+import  Footer  from "./MyComponents/Footer";
 import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Routes,
+  BrowserRouter
 } from "react-router-dom";
 
 function App() {
@@ -59,23 +61,17 @@ function App() {
 
   return (
     <>
-      <Router>
         <Header title="My Todos List" searchBar={false} />
-        <Switch>
-          <Route exact path="/" render={() => {
-            return(
-            <>
-              <AddTodo addTodo={addTodo} />
-              <Todos todos={todos} onDelete={onDelete} />
-            </>)
-          }}>
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={
+              <>
+                <AddTodo addTodo={addTodo} />
+                <Todos todos={todos} onDelete={onDelete} />
+              </>
+            }/>
+            <Route exact path="/about" element={<About />}/>
+        </Routes>
         <Footer />
-      </Router>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import React from 'react'
-import {TodoItem} from "./TodoItem";
-export const Todos = (props) => {
+import TodoItem from "./TodoItem";
+export default function Todos  (props) {
   let myStyle = {
     minHeight: "70vh",
     margin: "40px auto"

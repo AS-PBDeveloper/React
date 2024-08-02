@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const About = () => {
+export default function About () {
   return (
     <div>
           This is an about component
@@ -8,5 +8,9 @@ export const About = () => {
     </div>
   )
 }
+
+
+
+
 
 

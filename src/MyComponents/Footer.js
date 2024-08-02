@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Footer = () => {
+export default function Footer () {
   // let footerStyle = {
   //   position: "relative",
   //   top: "70vh",
